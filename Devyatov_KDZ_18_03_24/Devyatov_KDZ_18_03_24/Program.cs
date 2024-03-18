@@ -3,6 +3,7 @@ using System.Threading;
 using Telegram.Bot;
 using Telegram.Bot.Requests;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 
 internal class Program
@@ -14,6 +15,7 @@ internal class Program
     {
         client = new TelegramBotClient(_token);
         client.StartReceiving(Update, Error);
+        //client.SendTextMessageAsync(message.Chat.Id, "ОУ МАЙН ГОТ: ", replyMarkup: GetButtons());
         Console.ReadLine();
     }
 
@@ -28,16 +30,23 @@ internal class Program
             switch (message.Text)
             {
                 case "ОТДАТЬ ЧЕСТЬ ПРАДЕДАМ":
-                    var stic = await client.SendStickerAsync(
+                    await client.SendStickerAsync(
                         chatId: message.Chat.Id,
-                        sticker: "gfh",
+                        sticker: InputFile.FromUri("https://raw.githubusercontent.com/BelyLandy/TelegramBots/main/Devyatov_KDZ_18_03_24/docs/702844443/97.webp"),
                         replyToMessageId: message.MessageId,
                         replyMarkup: GetButtons());
+                    break;
+
+                default:
+                    await botClient.SendPhotoAsync(
+                    chatId: message.Chat.Id,
+                    photo: InputFile.FromUri("https://github.com/TelegramBots/book/raw/master/src/docs/photo-ara.jpg"),
+                    caption: "<b>ГУТЕН АБЕНД ЙОПАНИ СИР</b>",
+                    parseMode: ParseMode.Html);
                     break;
             }
 
         }
-
 
 
     }
@@ -47,6 +56,7 @@ internal class Program
         ReplyKeyboardMarkup replyKeyboardMarkup = new(new[]
              {
                 new KeyboardButton[] { "ОТДАТЬ ЧЕСТЬ ПРАДЕДАМ" },
+                //new KeyboardButton[] { "Начать диалог заново" }
             })
         {
             ResizeKeyboard = true

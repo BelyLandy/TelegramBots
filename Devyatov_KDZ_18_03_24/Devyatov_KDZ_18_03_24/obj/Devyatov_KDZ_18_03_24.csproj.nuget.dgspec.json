@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dexte\\source\\repos\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24.csproj": {}
+    "D:\\Github\\TelegramBots\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dexte\\source\\repos\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24.csproj": {
+    "D:\\Github\\TelegramBots\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dexte\\source\\repos\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24.csproj",
+        "projectUniqueName": "D:\\Github\\TelegramBots\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24.csproj",
         "projectName": "Devyatov_KDZ_18_03_24",
-        "projectPath": "C:\\Users\\dexte\\source\\repos\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24.csproj",
+        "projectPath": "D:\\Github\\TelegramBots\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24.csproj",
         "packagesPath": "C:\\Users\\dexte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dexte\\source\\repos\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24\\obj\\",
+        "outputPath": "D:\\Github\\TelegramBots\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dexte\\AppData\\Roaming\\NuGet\\NuGet.Config",
