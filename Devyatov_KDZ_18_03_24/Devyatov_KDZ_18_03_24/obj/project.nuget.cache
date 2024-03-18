@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "VqK12oyE0EuxsFlBaNOGe9w1FrgRqDZZp8DKhUC3ZiGfVovmF3fw6gbB+gCiSSSRedrs/Ar1eUI+EB1X9Bi1jw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dexte\\source\\repos\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24\\Devyatov_KDZ_18_03_24.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dexte\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\dexte\\.nuget\\packages\\telegram.bot\\19.0.0\\telegram.bot.19.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
