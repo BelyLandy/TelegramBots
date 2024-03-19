@@ -45,8 +45,9 @@ internal class Program
                 default:
                     await botClient.SendAnimationAsync(
                         chatId: message.Chat.Id,
-                        animation: InputFile.FromUri("https://raw.githubusercontent.com/TelegramBots/book/master/src/docs/video-waves.mp4"),
-                        caption: "<b>Привет! Отправь сюда файл с расширением .csv или .json</b>"
+                        animation: InputFile.FromUri("https://github.com/BelyLandy/TelegramBots/blob/main/Devyatov_KDZ_18_03_24/docs/141269907.gif?raw=true"),
+                        caption: "<b>Привет! Отправь сюда файл с расширением .csv или .json</b>",
+                        parseMode: ParseMode.Html
                         );
                     break;
             }
