@@ -8,15 +8,26 @@ using Telegram.Bot.Types.ReplyMarkups;
 
 internal class Program
 {
-    private static string _token = "6441636260:AAH3y_4o7Pw2kpLZwL-suSI1LY2Zz9reYJI";
+    private static string _token = "6658707765:AAGB91S9s7eO7sKbrJ418J-1OsD-hTmrDHY";
     private static TelegramBotClient client;
 
     private static void Main(string[] args)
     {
-        client = new TelegramBotClient(_token);
-        client.StartReceiving(Update, Error);
-        //client.SendTextMessageAsync(message.Chat.Id, "ОУ МАЙН ГОТ: ", replyMarkup: GetButtons());
-        Console.ReadLine();
+        try
+        {
+            client = new TelegramBotClient(_token);
+            client.StartReceiving(Update, Error);
+            Console.ReadLine();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.ToString());
+        }
+    }
+
+    private static Task Error(ITelegramBotClient client, Exception exception, CancellationToken token)
+    {
+        throw new NotImplementedException();
     }
 
     async static Task Update(ITelegramBotClient botClient, Update update, CancellationToken token)
@@ -29,20 +40,14 @@ internal class Program
 
             switch (message.Text)
             {
-                case "ОТДАТЬ ЧЕСТЬ ПРАДЕДАМ":
-                    await client.SendStickerAsync(
-                        chatId: message.Chat.Id,
-                        sticker: InputFile.FromUri("https://raw.githubusercontent.com/BelyLandy/TelegramBots/main/Devyatov_KDZ_18_03_24/docs/702844443/97.webp"),
-                        replyToMessageId: message.MessageId,
-                        replyMarkup: GetButtons());
-                    break;
+                
 
                 default:
-                    await botClient.SendPhotoAsync(
-                    chatId: message.Chat.Id,
-                    photo: InputFile.FromUri("https://github.com/TelegramBots/book/raw/master/src/docs/photo-ara.jpg"),
-                    caption: "<b>ГУТЕН АБЕНД ЙОПАНИ СИР</b>",
-                    parseMode: ParseMode.Html);
+                    await botClient.SendAnimationAsync(
+                        chatId: message.Chat.Id,
+                        animation: InputFile.FromUri("https://raw.githubusercontent.com/TelegramBots/book/master/src/docs/video-waves.mp4"),
+                        caption: "<b>Привет! Отправь сюда файл с расширением .csv или .json</b>"
+                        );
                     break;
             }
 
@@ -51,23 +56,37 @@ internal class Program
 
     }
 
-    private static IReplyMarkup GetButtons()
+    private static IReplyMarkup GetDefaultButtons()
     {
         ReplyKeyboardMarkup replyKeyboardMarkup = new(new[]
              {
                 new KeyboardButton[] { "ОТДАТЬ ЧЕСТЬ ПРАДЕДАМ" },
-                //new KeyboardButton[] { "Начать диалог заново" }
+                new KeyboardButton[] { "Начать диалог заново" }
             })
         {
             ResizeKeyboard = true
         };
 
         return replyKeyboardMarkup;
-    
+
     }
 
-    private static Task Error(ITelegramBotClient client, Exception exception, CancellationToken token)
+    private static IReplyMarkup GetInlineButtons()
     {
-        throw new NotImplementedException();
+        InlineKeyboardMarkup inlineKeyboard = new(new[]
+        {
+            new []
+            {
+                InlineKeyboardButton.WithCallbackData(text: "ОТДАТЬ ЧЕСТЬ ПРАДЕДАМ", callbackData: "11"),
+                InlineKeyboardButton.WithCallbackData(text: "1.2", callbackData: "12"),
+            },
+            new []
+            {
+                InlineKeyboardButton.WithCallbackData(text: "2.1", callbackData: "21"),
+                InlineKeyboardButton.WithCallbackData(text: "2.2", callbackData: "22"),
+            },
+        });
+
+        return inlineKeyboard;
     }
 }
